@@ -1,20 +1,19 @@
 language: python
 sudo: false
 
-python:
-  - 2.7
-  - 3.3
-  - 3.4
-  - 3.5
+env:
+  global:
+    - CONDA_DEPS="dipy nose"
+
 
 matrix:
   include:
     - os: osx
-      env:
-        - CONDA_DEPS="dipy nose"
+      - python: 2.7
+      - python: 3.5
     - os: linux
-      env:
-        - CONDA_DEPS="dipy nose"
+      - python: 2.7
+      - python: 3.5
 
 before_install:
 - export MINICONDA=$HOME/miniconda
