@@ -7,8 +7,14 @@ python:
   - 3.4
   - 3.5
 
-env:
-  - CONDA_DEPS="dipy nose"
+matrix:
+  include:
+    - os: osx
+      env:
+        - CONDA_DEPS="dipy nose"
+    - os: linux
+      env:
+        - CONDA_DEPS="dipy nose"
 
 before_install:
 - export MINICONDA=$HOME/miniconda
