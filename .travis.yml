@@ -2,7 +2,7 @@ sudo: false
 
 env:
   global:
-    - CONDA_DEPS="dipy nose" TEST_WITH_XVFB=true
+    - CONDA_DEPS="dipy nose" PIP_DEPS="xvfbwrapper" TEST_WITH_XVFB=true
 
 matrix:
   include:
@@ -35,6 +35,7 @@ before_install:
 - conda info -a
 - conda config --add channels conda-forge
 - conda install python=$PYTHON_VERSION $CONDA_DEPS
+- pip install $PIP_DEPS
 
 script:
   # No figure Windows for Matplotlib:
