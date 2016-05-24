@@ -8,13 +8,17 @@ env:
 matrix:
   include:
     - os: osx
-      python: 2.7
+      env:
+         - PYTHON_VERSION=2.7
     - os: osx
-      python: 3.5
+      env:
+         - PYTHON_VERSION=3.5
     - os: linux
-      python: 3.5
+      env:
+         - PYTHON_VERSION=2.7
     - os: linux
-      python: 2.7
+      env:
+         - PYTHON_VERSION=3.5
 
 before_install:
 - export MINICONDA=$HOME/miniconda
@@ -27,8 +31,7 @@ before_install:
 - conda update conda
 - conda info -a
 - conda config --add channels conda-forge
-- conda install python=$TRAVIS_PYTHON_VERSION $CONDA_DEPS
-- travis_retry pip install $PIP_DEPS
+- conda install python=$PYTHON_VERSION $CONDA_DEPS
 
 script:
 - python run_test.py
