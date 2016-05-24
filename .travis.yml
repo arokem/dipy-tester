@@ -3,7 +3,7 @@ sudo: false
 
 env:
   global:
-    - CONDA_DEPS="dipy nose"
+    - CONDA_DEPS="dipy nose" TEST_WITH_XVFB=true
 
 matrix:
   include:
