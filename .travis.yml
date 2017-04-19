@@ -1,8 +1,9 @@
 sudo: false
 
 python:
-- 2.7
-- 3.5
+  - '2.7'
+  - '3.5'
+  - '3.6'
 
 env:
 - CONDA_DEPS="dipy nose" PIP_DEPS="xvfbwrapper" TEST_WITH_XVFB=true MINICONDA_URL="https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh"
