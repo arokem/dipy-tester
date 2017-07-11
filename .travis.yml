@@ -2,7 +2,7 @@ sudo: false
 
 python:
 - 2.7
-- 3.5
+- 3.6
 env:
 - CONDA_DEPS="dipy nose" PIP_DEPS="xvfbwrapper" TEST_WITH_XVFB=true
 
